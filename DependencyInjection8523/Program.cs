@@ -24,6 +24,10 @@ namespace DependencyInjection8523
             Araba simgeninArabası = new Araba(surucu2);
             simgeninArabası.Sur();
 
+            SurucuBase surucu3 = new Surucu { Isim = "Muhittin" };
+            Araba araba1  = new Araba(surucu3);
+            araba1.Sur(surucu3.Isim);
+            
             Console.ReadLine();
         }
     }
@@ -39,7 +43,10 @@ namespace DependencyInjection8523
         {
             Console.WriteLine("Araba: " + _surucu.Isim + " tarafından sürülüyor...");
         }
-            
+        public void Sur(string surucu)
+        {
+            Console.WriteLine("Araba: " + surucu + " tarafından 30 Nisan'da sürülüyor...");
+        }
     }
     abstract class SurucuBase // ISurucuBase
     {
